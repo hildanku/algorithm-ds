@@ -1,0 +1,29 @@
+function reverseWords(s: string): string {
+    const reverse = s.split(/\s+/).reverse()
+    return reverse.join(' ').trim()
+}
+// agi metu dela
+//
+console.log(reverseWords('hello world'))
+
+function reverse(s: string): string {
+    let words: Array<string> = []
+    let word = ''
+
+    for (let char of s) {
+        if (char !== ' ') {
+            word += char
+        } else {
+            words.push(word)
+            word = ''
+        }
+    }
+
+    if (word.length > 0) {
+        words.push(word)
+    }
+
+    return words.reverse().join(' ')
+}
+
+console.log(reverse('hello world'))
