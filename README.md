@@ -1,4 +1,7 @@
-# datastructure
+# ALGORITHM  and DATA STRUCTURE
+## Roadmap
+    - make a small docs introduce algorithm and data structure
+    - 
 
 To install dependencies:
 
