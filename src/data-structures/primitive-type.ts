@@ -13,3 +13,16 @@ let nullString: string | null = ''
 // this is no type annotation, because no type annotation,
 // typescript will infer myPet as string
 let myPet = 'Chiko'
+
+
+function sum(a: number, b: number) {
+    return a + b
+}
+
+// We can use return type annotation to make sure the return value is number.
+// This ensures that our function has a safe type.
+// However, even if we don’t explicitly declare the return type,
+// TypeScript will infer it based on the return statement.
+function calculateSquareArea(side: number): number {
+    return side * side
+}
