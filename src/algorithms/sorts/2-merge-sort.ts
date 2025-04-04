@@ -1,4 +1,4 @@
-function mergeSort(a: number[], b: number[]): number[] {
+function merge(a: number[], b: number[]): number[] {
 
     let result = []
 
@@ -10,11 +10,11 @@ function mergeSort(a: number[], b: number[]): number[] {
         }
     }
 
-    while (a.length < 0) {
+    while (a.length > 0) {
         result.push(a.shift()!)
     }
 
-    while (b.length < 0) {
+    while (b.length > 0) {
         result.push(b.shift()!)
     }
 
@@ -22,18 +22,17 @@ function mergeSort(a: number[], b: number[]): number[] {
     return result
 }
 
-function merge(arr: number[]) {
+function mergeSort(arr: number[]): number[] {
 
     if (arr.length <= 1) return arr
 
     const middle = Math.floor(arr.length / 2)
     const left = arr.slice(0, middle)
     const right = arr.slice(middle)
-    console.log('merge', left, right)
-    //const sortedLeft = merge(left)
-    //const sortedRight = merge(right)
+    const sortedLeft = mergeSort(left)
+    const sortedRight = mergeSort(right)
 
-    return mergeSort(left, right)
+    return merge(sortedLeft, sortedRight)
 }
 
-console.log(merge([5, 6, 2, 6, 7, 9, 1, 2, 6]))
+console.log(mergeSort([5, 6, 2, 6, 7, 9, 1, 2, 6]))
